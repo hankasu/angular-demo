@@ -1,0 +1,40 @@
+.session {   
+    height: 100%;
+}
+
+.session .well-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.session span {
+    display: block;
+}
+
+.container {
+    padding: 20px;
+}
+
+.session {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.votingWidget {
+    height: 64px;
+    padding: 7px;
+}
+
+.votingButton {
+    padding-left:6px;
+    cursor:pointer;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none;
+}
