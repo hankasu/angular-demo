@@ -38,3 +38,8 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none;
 }
+
+.hoverwell:hover {
+    background-color: #e3e3e3;
+    cursor: pointer;
+}
