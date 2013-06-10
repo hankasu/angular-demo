@@ -1,43 +1,18 @@
 "use strict";
 
-eventsApp.factory("eventData", function() {
+eventsApp.factory("eventData", function($resource, $q) {
 	return {
-		event: {
-            name: "Angular Boot Camp",
-            date: "1/1/2013",
-            time: "10:30am",
-            location: {
-                address: "Google Headquarters",
-                city: "Mountain View",
-                province: "CA"
-            },
-            imageUrl: "img/angular.png",
-            sessions: [
-                {
-                    name: "Directives Masterclass",
-                    creatorName: "Bob Smith",
-                    duration: 2,
-                    level: "Advanced",
-                    abstract: "In this session, you will learn the ins and outs of directives.",
-                    upvoteCount: 0
+	    getEvent: function() {
+            var deferred = $q.defer();
+            $resource("data/:id.json", { id: "@id"}).get({id: 1},
+                function(event) {
+                    deferred.resolve(event);
                 },
-                {
-                    name: "Scopes for fun and profit",
-                    creatorName: "John Doe",
-                    duration: 1,
-                    level: "Introductory",
-                    abstract: "We will take a closer look at scopes.",
-                    upvoteCount: 0
-                },
-                {
-                    name: "Well Behaved Controllers",
-                    creatorName: "Jane Doe",
-                    duration: 3,
-                    level: "Intermediate",
-                    abstract: "Controllers are the beginning of everything in Angular.",
-                    upvoteCount: 0
-                }
-            ]
-        }
+                function(response) {
+                    deferred.reject(response);
+                });
+                
+            return deferred.promise;
+	    }	
 	};
 });
