@@ -14,6 +14,9 @@ eventsApp.controller("EventListController",
         eventData.getAllEvents(function(event) {
             var event1 = clone(event);
             event1.name = "Testing made easy";
+            event1.id = 1;
+            event.id = 0;
+            
             $scope.events = [event, event1];    
         });
     }

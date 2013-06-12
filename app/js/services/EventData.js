@@ -5,13 +5,9 @@ eventsApp.factory("eventData", function($resource, $http, $q) {
 	return {
 	    getEvent: function() {
             var deferred = $q.defer();
-            resource.get({id: 1},
-                function(event) {
-                    deferred.resolve(event);
-                },
-                function(response) {
-                    deferred.reject(response);
-                });
+            $http({ method: "GET", url: "data/1.json"}).success(function(event) {
+                deferred.resolve(event);
+            });
                 
             return deferred.promise;
 	    },
