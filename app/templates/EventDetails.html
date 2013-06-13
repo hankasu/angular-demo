@@ -25,7 +25,7 @@
     Order By:
     <select ng-model="sortorder" class="input-small">
         <option selected value="name">Name</option>
-        <option value="-upvoteCount">Votes</option>
+        <option value="-upVoteCount">Votes</option>
     </select>
     Show:
     <select ng-model="query.level" class="input-medium">
@@ -42,7 +42,7 @@
                         <i class="icon-chevron-up"></i>  
                     </div>
                     <div class="badge">
-                        <div>{{ session.upvoteCount }}</div>
+                        <div>{{ session.upVoteCount }}</div>
                     </div>
                     <div class="votingButton" ng-click="downVoteSession(session)">
                         <i class="icon-chevron-down"></i>

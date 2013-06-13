@@ -8,11 +8,11 @@ eventsApp.controller("EventController",
         $scope.sortorder = "name";
         
         $scope.upVoteSession = function(session) {
-            session.upvoteCount++;  
+            session.upVoteCount++;  
         };
         
         $scope.downVoteSession = function(session) {
-            session.upvoteCount--;  
+            session.upVoteCount--;  
         };
     }
 );
